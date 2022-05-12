@@ -1,0 +1,7 @@
+{
+  "name": "ionicdmo",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
