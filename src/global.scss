@@ -24,3 +24,23 @@
 @import "~@ionic/angular/css/text-alignment.css";
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
+
+.center-elements {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%
+    }
+
+    @media (prefers-color-scheme: "light") {
+ion-content{
+        --background: rgb(231, 225, 225);
+    }
+}
+
+@media (prefers-color-scheme: "dark") {
+    ion-content{
+            --background: rgb(40, 40, 40);
+        }
+    }
+

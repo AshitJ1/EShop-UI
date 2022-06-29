@@ -1,0 +1,79 @@
+<ion-header>
+  <ion-toolbar color="success">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>E-Shop</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<ion-list color="success">
+  <ion-item color="success">
+<ion-avatar slot="start">
+  <img src= "assets/Images/avtr.png" />
+</ion-avatar>
+<ion-label>
+  <h1>SellerName</h1>
+  <p>Total Earnings: <span class="money"> ₹ 15,000 </span></p>
+</ion-label>
+  </ion-item>
+</ion-list>
+
+<ion-card>
+  <iom-card-header>
+    <ion-card-subtitle>
+      Last Order
+    </ion-card-subtitle>
+    <ion-card-content>
+      <ion-item lines="none">
+        <ion-thumbnail slot="start">
+          <img src="assets/Images/aplwch.png"/>
+        </ion-thumbnail>
+        <ion-label>Delivered
+          <p>18/05/22 12:04:00</p>
+          <ion-button fill="clear">View</ion-button>
+        </ion-label>
+      </ion-item>
+    </ion-card-content>
+  </iom-card-header>
+</ion-card>
+
+<ion-card>
+  <iom-card-header>
+    <ion-card-subtitle>
+      More Orders
+    </ion-card-subtitle>
+    <ion-card-content>
+
+      <ion-item lines="none">
+        <ion-thumbnail slot="start">
+          <img src="assets/Images/aplfn12.jpg"/>
+        </ion-thumbnail>
+        <ion-label>Refund Initiated
+          <p>12/04/22 17:20:00</p>
+          <ion-button fill="clear">View</ion-button>
+        </ion-label>
+      </ion-item>
+
+      <ion-item lines="none" class="items">
+        <ion-thumbnail slot="start">
+          <img src="assets/Images/pad.PNG"/>
+        </ion-thumbnail>
+        <ion-label>Exchanged
+          <p>10/04/22 10:30:00</p>
+          <ion-button fill="clear">View</ion-button>
+        </ion-label>
+      </ion-item>
+
+      <ion-button color="success" fill="clear" size="full">See All...</ion-button>
+    </ion-card-content>
+  </iom-card-header>
+</ion-card>
+<ion-fab vertical="bottom" horizontal="end" slot="fixed">
+  <ion-fab-button color="success">
+    <ion-icon name="add"></ion-icon>
+  </ion-fab-button>
+</ion-fab>
+
+</ion-content>

@@ -1,0 +1,170 @@
+<ion-header>
+  <ion-toolbar color="success">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="login"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Register</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-badge color="tertiary" class="ion-margin-top ion-margin-start">10K+ Registered</ion-badge>
+  <form [formGroup]="registerForm">
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>
+        "What're ya
+      </ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list>
+        <ion-radio-group value="biff">
+
+          <ion-item>
+            <ion-label>Buyin?"</ion-label>
+            <ion-radio slot="start" value="CLIENT"></ion-radio>
+          </ion-item>
+
+          <ion-item>
+            <ion-label>Sellin'?"</ion-label>
+            <ion-radio slot="start" value="PARTNER"></ion-radio>
+          </ion-item>
+
+        </ion-radio-group>
+      </ion-list>
+
+
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>
+        Contact Information*
+      </ion-card-title>
+    </ion-card-header>
+    
+      <ion-item>
+        <ion-label position="floating">Name</ion-label>
+        <ion-input type="text" class="form-control" formControlName="name"></ion-input>
+      </ion-item>
+      <ng-container *ngIf="name?.invalid && (name?.touched || name?.dirty)">
+        <span class=text-danger *ngIf="name?.errors?.required">
+          *<span class="font-weight-bold">Name</span> is required
+        </span>
+      </ng-container>
+      <ion-item>
+        <ion-label position="floating">Email</ion-label>
+        <ion-input type="email" class="form-control" formControlName="email"></ion-input>
+      </ion-item>
+      <ng-container *ngIf="email?.invalid && (email?.touched || email?.dirty)">
+        <span class=text-danger *ngIf="email?.errors?.required">
+          *<span class="font-weight-bold">email</span> is required
+        </span>
+        <span class=text-danger *ngIf="email?.errors?.email">
+          *Please enter a <span class="font-weight-bold">valid Email ID</span>
+        </span>
+      </ng-container>
+      <ion-item>
+        <ion-label position="floating">Password</ion-label>
+        <ion-input type="Password" class="form-control" formControlName="password"></ion-input>
+      </ion-item>
+      <ng-container *ngIf="password?.invalid && (password?.touched || password?.dirty)">
+        <span class=text-danger *ngIf="password?.errors?.required">
+          *<span class="font-weight-bold">password</span> is required
+        </span>
+        <span class=text-danger *ngIf="password?.errors?.minLength">
+          *Atleast <span class="font-weight-bold">6 Digits required</span>
+        </span>
+      </ng-container>
+      <ion-item>
+        <ion-label position="floating">Confirm Password</ion-label>
+        <ion-input type="Password" type="Password" class="form-control" formControlName="password"></ion-input>
+      </ion-item>
+      <ng-container *ngIf="email?.invalid && (password?.touched || password?.dirty)">
+        <span class=text-danger *ngIf="password?.errors?.required">
+          *<span class="font-weight-bold">password</span> match required
+        </span>
+        <span class=text-danger *ngIf="password?.errors?.minLength">
+          *Atleast <span class="font-weight-bold">6 Digits required</span>
+        </span>
+      </ng-container>
+      <ion-item>
+        <ion-label position="floating">Phone</ion-label>
+        <ion-input type="tel" class="form-control" formControlName="phone"></ion-input>
+      </ion-item>
+      <ng-container *ngIf="phone?.invalid && (phone?.touched || phone?.dirty)">
+        <span class=text-danger *ngIf="phone?.errors?.required">
+          *<span class="font-weight-bold">phone No.</span> is required
+        </span>
+        <span class=text-danger *ngIf="phone?.errors?.minLength">
+          *Atleast <span class="font-weight-bold">10 Digits</span>
+        </span>
+        <span class=text-danger *ngIf="phone?.errors?.maxLength">
+          *Cannot<span class="font-weight-bold">Exceed 10 Digits</span>
+        </span>
+      </ng-container>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>
+        Address Information
+      </ion-card-title>
+    </ion-card-header>
+
+    <ion-item>
+      <ion-label position="floating">Location</ion-label>
+      <ion-input type="text" placeholder="House No. / Street / Area"></ion-input>
+    </ion-item>
+
+    <ion-item class="ion-margin-top ion-margin-bottom">
+      <ion-label>Country</ion-label>
+      <ion-select value="brown" okText="Confirm" cancelText="Dismiss" (ionChange)="onSelectCountry($event)">
+        <ion-select-option value="" [disabled]="true">--Select--</ion-select-option>
+        <ion-select-option *ngFor="let countries of country" value="{{countries.cid}}">{{countries.name}}</ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item class="ion-margin-top ion-margin-bottom">
+      <ion-label>State</ion-label>
+      <ion-select value="brown" okText="Confirm" cancelText="Dismiss" (ionChange)="onSelectState($event)">
+        <ion-select-option value="" [disabled]="true">--Select--</ion-select-option>
+        <ion-select-option *ngFor=" let states of state" value="{{states.sid}}">{{states.name}}</ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item class="ion-margin-top ion-margin-bottom">
+      <ion-label>City</ion-label>
+      <ion-select value="brown" okText="Confirm" cancelText="Dismiss">
+        <ion-select-option value="" [disabled]="true">--Select--</ion-select-option>
+        <ion-select-option *ngFor="let cities of city">{{cities.name}}</ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Landmark</ion-label>
+      <ion-input type="text" placeholder="NeighbourHood"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Zip-Code</ion-label>
+      <ion-input type="Number" placeholder="6-Digits"></ion-input>
+    </ion-item>
+
+  </ion-card>
+
+  <ion-row>
+    <ion-col size="12" class="ion-text-start ion-padding">
+      <ion-text color="danger">Fields marked with * are required</ion-text>
+    </ion-col>
+    <ion-col size="12" class="ion-text-start ion-padding">
+      <ion-text color="warning">Please do not prefix country code in your phone number</ion-text>
+    </ion-col>
+  </ion-row>
+
+  <ion-button color="primary" size="full"  [disabled]="!registerForm.valid" (click)="showTerms()">Register</ion-button>
+  </form>
+
+</ion-content>

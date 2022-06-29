@@ -1,0 +1,397 @@
+<ion-header>
+  <ion-toolbar color="success">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>E-Shop</ion-title>
+
+    <ion-buttons slot="end">
+      <ion-button fill="clear" class="notify">
+        <ion-icon name="notifications-outline" color="light"></ion-icon>
+        <span> &nbsp; </span>
+      </ion-button>
+
+      <ion-button fill="clear" id="open-bag">
+        <ion-icon name="bag-handle-outline" color="light"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+
+  <ion-item lines="none" class="search">
+    <ion-searchbar color="light" placeholder="Find Vehicles, Furniture and more..."></ion-searchbar>
+  </ion-item>
+
+</ion-header>
+
+<ion-content>
+
+  <div style="display: flex; justify-content: center;">
+    <ion-button fill="clear" (click)="setLocation()">
+      <ion-icon name="navigate-sharp"></ion-icon>
+      <ion-label style="text-transform:initial">Tap to set Your Location</ion-label>
+    </ion-button>
+  </div>
+
+  <div style="display: flex; justify-content: center;">
+    <p style="font-size: small;">{{ message }}</p>
+  </div>
+
+  <ion-card>
+    <ion-item lines="none">
+      <ion-label style="font-weight: bold; font-size: medium">What are you looking for ?</ion-label>
+      <ion-button fill="clear" slot="end" color="success">See All <ion-icon name="caret-forward-circle-sharp">
+        </ion-icon>
+      </ion-button>
+    </ion-item>
+
+    <div style="display: flex; justify-content: center;">
+      <ion-card-content>
+
+        <ion-grid>
+          <ion-row>
+            <ion-col size-xs="3" size-md="2">
+              <ion-thumbnail>
+                <img src="assets/Images/car.jpg">
+              </ion-thumbnail>
+              <p text-center style="font-size:small">Vehicle</p>
+            </ion-col>
+
+            <ion-col size-xs="3" size-md="2">
+              <ion-thumbnail>
+                <img src="assets/Images/elec.png">
+              </ion-thumbnail>
+              <p text-center style="font-size:small">Electronics</p>
+            </ion-col>
+
+            <ion-col size-xs="3" size-md="2">
+              <ion-thumbnail>
+                <img src="assets/Images/fash.jpg">
+              </ion-thumbnail>
+              <p text-center style="font-size:small">Fashion</p>
+            </ion-col>
+
+            <ion-col size-xs="3" size-md="2">
+              <ion-thumbnail>
+                <img src="assets/Images/ball.jpg">
+              </ion-thumbnail>
+              <p text-center style="font-size:small">Sports</p>
+            </ion-col>
+
+            <ion-col size-xs="3" size-md="2">
+              <ion-thumbnail>
+                <img src="assets/Images/book.jpg">
+              </ion-thumbnail>
+              <p text-center style="font-size:small">Stationary</p>
+            </ion-col>
+
+            <ion-col size-xs="3" size-md="2">
+              <ion-thumbnail>
+                <img src="assets/Images/fur.jpg">
+              </ion-thumbnail>
+              <p text-center style="font-size:small">Furniture</p>
+            </ion-col>
+
+            <ion-col size-xs="3" size-md="2">
+              <ion-thumbnail>
+                <img src="assets/Images/cook.jpg">
+              </ion-thumbnail>
+              <p text-center style="font-size:small">Kitchen</p>
+            </ion-col>
+
+            <ion-col size-xs="3" size-md="2">
+              <ion-thumbnail>
+                <img src="assets/Images/toy.jpg">
+              </ion-thumbnail>
+              <p text-center style="font-size:small">Kids / Toys</p>
+            </ion-col>
+
+          </ion-row>
+        </ion-grid>
+
+      </ion-card-content>
+    </div>
+  </ion-card>
+
+  <div class="title ion-padding">
+    <h2>Featured</h2>
+    <ion-button size="small" fill="clear" slot="end" color="success" (click)="expandFeat()">See All <ion-icon
+        name="caret-forward-circle-sharp">
+      </ion-icon>
+    </ion-button>
+  </div>
+
+  <ion-button fill="clear" id="left-start">
+    <ion-icon name="funnel-sharp"></ion-icon>
+    <ion-icon name="list-sharp"></ion-icon>
+  </ion-button>
+
+  <ion-grid>
+    <ion-row>
+
+      <ion-col size-xs="6" size-md="6">
+        <ion-card class="cardo">
+          <div style="display: flex; align-items: center;justify-content: center;">
+            <img src="assets/Images/igraph.png" />
+          </div>
+          <ion-icon name="heart-outline" class="wish"></ion-icon>
+          <br>
+          <ion-card-title>Apple iPhone 12 128 GB</ion-card-title>
+          <p>
+            ₹ 45,000
+          </p>
+          <ion-button size="full" color="success">
+            <ion-label>View</ion-label>
+            <ion-icon name="eye-outline"></ion-icon>
+          </ion-button>
+        </ion-card>
+      </ion-col>
+
+      <ion-col size-xs="6" size-md="6">
+        <ion-card class="cardo">
+          <div style="display: flex; align-items: center;justify-content: center;">
+            <img src="assets/Images/hm.jpg" />
+          </div>
+          <a href="javascript:void(0)" (click)="save()">
+            <ion-icon [name]="saved ? 'heart-sharp': 'heart-outline'" class="wish" color="danger"></ion-icon>
+          </a>
+          <br>
+          <ion-card-title class="a">Men White Fit Sweatshirt
+          </ion-card-title>
+          <p>
+            ₹ 2,000
+          </p>
+          <ion-button size="full" color="success">
+            <ion-label>View</ion-label>
+            <ion-icon name="eye-outline"></ion-icon>
+          </ion-button>
+        </ion-card>
+      </ion-col>
+
+      <ng-container *ngIf="expandedfeat">
+        <ion-col size-xs="6" size-md="6">
+          <ion-card class="cardo">
+            <div style="display: flex; align-items: center;justify-content: center;">
+              <img src="assets/Images/aplwch.png" />
+            </div>
+            <ion-icon name="heart-outline" class="wish"></ion-icon>
+            <br>
+            <ion-card-title>Apple watch</ion-card-title>
+            <p>
+              ₹ 15,000
+            </p>
+            <ion-button size="full" color="success">
+              <ion-label>View</ion-label>
+              <ion-icon name="eye-outline"></ion-icon>
+            </ion-button>
+
+          </ion-card>
+        </ion-col>
+      </ng-container>
+
+    </ion-row>
+  </ion-grid>
+
+
+  <div class="title ion-padding">
+    <h2>Most Viewed</h2>
+  </div>
+
+  <div>
+
+    <ion-slides [options]="option" #slides>
+
+      <ion-slide>
+        <ion-card>
+          <img src="assets/Images/imain.png" />
+          <ion-card-subtitle>10 mins ago</ion-card-subtitle>
+          <ion-card-title>Apple iPhone 12 128 GB</ion-card-title>
+          <p>
+            ₹ 45000
+          </p>
+        </ion-card>
+      </ion-slide>
+
+      <ion-slide>
+        <ion-card>
+          <img src="assets/Images/imain.png" />
+          <ion-card-subtitle>10 mins ago</ion-card-subtitle>
+          <ion-card-title>Apple iPhone 12 128 GB</ion-card-title>
+          <p>
+            ₹ 45000
+          </p>
+        </ion-card>
+      </ion-slide>
+
+      <ion-slide>
+        <ion-card>
+          <img src="assets/Images/imain.png" />
+          <ion-card-subtitle>10 mins ago</ion-card-subtitle>
+          <ion-card-title>Apple iPhone 12 128 GB</ion-card-title>
+          <p>
+            ₹ 45000
+          </p>
+        </ion-card>
+      </ion-slide>
+
+    </ion-slides>
+
+    <div style="display: flex; align-items: center;justify-content: center;">
+      <ion-button fill="clear" (click)="slides.slidePrev()">
+        <ion-icon name="chevron-back-circle"></ion-icon>
+      </ion-button>
+      <ion-button fill="clear" (click)="slides.slideNext()">
+        <ion-icon name="chevron-forward-circle"></ion-icon>
+      </ion-button>
+    </div>
+
+  </div>
+
+  <!--Filters Modal starts-->
+  <ion-popover trigger="left-start" side="left" alignment="start">
+    <ng-template>
+      <ion-content class="ion-padding">Hello World!</ion-content>
+    </ng-template>
+  </ion-popover>
+  <!--Filters Modal ends-->
+
+  <!--Profile Fab Button starts-->
+  <ion-fab horizontal="end" vertical="bottom" slot="fixed">
+    <ion-fab-button color="dark">
+      <ion-icon md="caret-up" ios="chevron-up-circle-outline"></ion-icon>
+    </ion-fab-button>
+    <ion-fab-list side="top">
+      <ion-fab-button color="light">
+        <ion-icon name="logo-facebook"></ion-icon>
+      </ion-fab-button>
+      <ion-fab-button color="light">
+        <ion-icon name="logo-twitter"></ion-icon>
+      </ion-fab-button>
+      <ion-fab-button color="light">
+        <ion-icon name="logo-vimeo"></ion-icon>
+      </ion-fab-button>
+      <ion-fab-button color="light">
+        <ion-icon name="logo-google"></ion-icon>
+      </ion-fab-button>
+    </ion-fab-list>
+  </ion-fab>
+  <!--Profile Fab Button ends-->
+
+  <!--Cart Modal starts-->
+  <ion-modal #modal trigger="open-bag">
+    <ng-template>
+      <ion-content>
+        <ion-toolbar>
+          <ion-title>View Bag</ion-title>
+          <ion-buttons slot="end">
+            <ion-button color="light" (click)="modal.dismiss()">Close</ion-button>
+          </ion-buttons>
+        </ion-toolbar>
+        <ion-list>
+
+          <ion-item>
+            <ion-avatar slot="start">
+              <ion-img src="assets/Images/hm.jpg"></ion-img>
+            </ion-avatar>
+            <ion-label>
+              <h2>Men White Fit Sweatshirt</h2>
+              <p style="display: inline-flex;">₹ 2,000</p> &nbsp;
+              <p style="display: inline-flex; font-size: x-small;">60% OFF</p>
+            </ion-label>
+            <ion-item lines="none">
+              <ion-select placeholder="Size" style="font-size: small;">
+                <ion-select-option [disabled]="true">--Select Size--</ion-select-option>
+                <ion-select-option>XS</ion-select-option>
+                <ion-select-option>S</ion-select-option>
+                <ion-select-option>M</ion-select-option>
+                <ion-select-option>L</ion-select-option>
+                <ion-select-option>XL</ion-select-option>
+                <ion-select-option>XXL</ion-select-option>
+                <ion-select-option>3XL</ion-select-option>
+                <ion-select-option>4XL</ion-select-option>
+              </ion-select>
+            </ion-item>
+            <ion-item lines="none">
+              <ion-label>Qty</ion-label> &nbsp;
+              <ion-icon name="remove-circle" (click)="decrement()" style="color:red"></ion-icon>
+              {{qtyNumber}}
+              <ion-icon name="add-circle" (click)="increment()" style="color:green"></ion-icon>
+            </ion-item>
+          </ion-item>
+
+          <ion-item>
+            <ion-avatar slot="start">
+              <ion-img src="assets/Images/igraph.png"></ion-img>
+            </ion-avatar>
+            <ion-label>
+              <h2>Apple iPhone 12 128 GB</h2>
+              <p style="display: inline-flex;">₹ 45,000</p>
+            </ion-label>
+            <ion-item lines="none">
+              <ion-label>Qty</ion-label> &nbsp;
+              <ion-icon name="remove-circle" (click)="decrement()" style="color:red"></ion-icon>
+              {{qtyNumber}}
+              <ion-icon name="add-circle" (click)="increment()" style="color:green"></ion-icon>
+            </ion-item>
+          </ion-item>
+
+          <ion-item>
+            <ion-avatar slot="start">
+              <ion-img src="assets/Images/aplwch.png"></ion-img>
+            </ion-avatar>
+            <ion-label>
+              <h2>Apple watch</h2>
+              <p style="display: inline-flex;">₹ 15,000</p> &nbsp;
+              <p style="display: inline-flex; font-size: x-small;">5% OFF</p>
+            </ion-label>
+            <ion-item lines="none">
+              <ion-label>Qty</ion-label> &nbsp;
+              <ion-icon name="remove-circle" (click)="decrement()" style="color:red"></ion-icon>
+              {{qtyNumber}}
+              <ion-icon name="add-circle" (click)="increment()" style="color:green"></ion-icon>
+            </ion-item>
+          </ion-item>
+
+          <ion-item>
+            <ion-avatar slot="start">
+              <ion-img src="assets/Images/ikigai.jpg"></ion-img>
+            </ion-avatar>
+            <ion-label>
+              <h2>IKIGAI PaperBack</h2>
+              <p style="display: inline-flex;">₹ 300</p> &nbsp;
+              <p style="display: inline-flex; font-size: x-small;">10% OFF</p>
+            </ion-label>
+            <ion-item lines="none">
+              <ion-label>Qty</ion-label> &nbsp;
+              <ion-icon name="remove-circle" (click)="decrement()" style="color:red"></ion-icon>
+              {{qtyNumber}}
+              <ion-icon name="add-circle" (click)="increment()" style="color:green"></ion-icon>
+            </ion-item>
+          </ion-item>
+          
+          <table>
+            <tr>
+              <td>MRP:</td>
+              <td>₹ 62,300</td>
+            
+            </tr>
+            <tr>
+              <td style="font-size:small">( - ) Total Savings %:</td>
+              <td style="font-size:small">₹ 1,980 (3.17%)</td>
+              
+            </tr>
+            <tr>
+              <td><h3>Bag Total:</h3></td>
+              <td><h2>₹ 60,320</h2></td>
+              
+            </tr>
+            
+          </table>
+          
+
+        </ion-list>
+      </ion-content>
+    </ng-template>
+  </ion-modal>
+  <!--Cart Modal ends-->
+
+</ion-content>

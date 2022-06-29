@@ -1,0 +1,19 @@
+ion-button[color="dark"]{
+text-transform: lowercase;
+}
+ion-content{
+    --background: var(--ion-color-success);
+}
+.secitem{
+    ion-label{
+        white-space: normal;
+        font-size: small;
+    }
+    ion-checkbox{
+        --size: 15px;
+    }
+    ion-button{
+        text-transform:initial;
+        color:blue;
+    }
+}

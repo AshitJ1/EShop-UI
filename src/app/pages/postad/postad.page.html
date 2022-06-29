@@ -1,0 +1,85 @@
+<ion-header>
+  <ion-toolbar color="success">
+    <ion-button slot="start" fill="clear">
+      <ion-icon name="checkmark-sharp" color="dark"></ion-icon>
+    </ion-button>
+    <ion-title>Create Ad</ion-title>
+    <ion-button slot="end" fill="clear">
+      <ion-icon name="close-sharp" color="dark"></ion-icon>
+  </ion-button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>
+        Product Information
+      </ion-card-title>
+    </ion-card-header>
+  
+    <ion-item>
+      <ion-label position="floating">Title</ion-label>
+      <ion-input type="text"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Description</ion-label>
+      <ion-textarea placeholder="Enter more information here..."></ion-textarea>
+    </ion-item>
+
+    <br><br>
+    <ion-label class="ionel">Upload Image</ion-label>
+    <ion-item lines="none" class="ion-margin">
+      <ion-input type="file"></ion-input>
+    </ion-item>
+  
+    <br><br>
+    <ion-item lines="none">
+      <ion-label>Quantity</ion-label>
+      <ion-icon name="remove-circle" (click)="decrement()" style="color:red"></ion-icon>
+      {{currentNumber}}
+      <ion-icon name="add-circle" (click)="increment()" style="color:green"></ion-icon>
+    </ion-item>
+
+    <br><br>
+    <ion-item lines="none">
+      <ion-label>Category</ion-label>
+        <ion-select placeholder="--Select--">
+        <ion-select-option value="Catg-1">Furniture</ion-select-option>
+        <ion-select-option value="Catg-2">Clothing</ion-select-option>
+        <ion-select-option value="Catg-3">Computer / Accessories</ion-select-option>
+        <ion-select-option value="Catg-4">Vehicles</ion-select-option>
+        <ion-select-option value="Catg-5">Sports / Equipments</ion-select-option>
+      </ion-select>
+    </ion-item>
+  
+    <br>
+    <ion-item>
+      <ion-label position="floating">Price</ion-label>
+      <ion-input type="number" placeholder="₹ 0000 (Quote)"></ion-input>
+    </ion-item>
+  
+  </ion-card>
+  
+  <div #map id="map"></div>
+
+  <ion-card>
+    <ion-card-content>
+      <ion-item>
+        <ion-button fill="clear" size="small">
+        <ion-icon name="pencil-sharp"></ion-icon>
+        <ion-label>Edit</ion-label>
+      </ion-button>
+    </ion-item>
+      <p>Address: Fake Street, 111</p>
+      <p>Appartment: No.64</p>
+      <p>City Name: State xyz</p>
+      <p>Pin-Code: 110064</p>
+      <P>Landmark: Nearest metro pillar No. 420</P>
+      <p>Contact Information: 9818XXXX98</p>
+    </ion-card-content>
+  </ion-card>
+ 
+</ion-content>
