@@ -128,37 +128,18 @@
   <ion-grid>
     <ion-row>
 
-      <ion-col size-xs="6" size-md="6">
+      <ion-col size-xs="6" size-md="6" *ngFor ="let i of productList">
         <ion-card class="cardo">
           <div style="display: flex; align-items: center;justify-content: center;">
-            <img src="assets/Images/igraph.png" />
-          </div>
-          <ion-icon name="heart-outline" class="wish"></ion-icon>
-          <br>
-          <ion-card-title>Apple iPhone 12 128 GB</ion-card-title>
-          <p>
-            ₹ 45,000
-          </p>
-          <ion-button size="full" color="success">
-            <ion-label>View</ion-label>
-            <ion-icon name="eye-outline"></ion-icon>
-          </ion-button>
-        </ion-card>
-      </ion-col>
-
-      <ion-col size-xs="6" size-md="6">
-        <ion-card class="cardo">
-          <div style="display: flex; align-items: center;justify-content: center;">
-            <img src="assets/Images/hm.jpg" />
+            <img src= />
           </div>
           <a href="javascript:void(0)" (click)="save()">
             <ion-icon [name]="saved ? 'heart-sharp': 'heart-outline'" class="wish" color="danger"></ion-icon>
           </a>
           <br>
-          <ion-card-title class="a">Men White Fit Sweatshirt
-          </ion-card-title>
+          <ion-card-title>{{ productList.title }}</ion-card-title>
           <p>
-            ₹ 2,000
+            {{ productList.price | currency: 'INR' }}
           </p>
           <ion-button size="full" color="success">
             <ion-label>View</ion-label>

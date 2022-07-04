@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ModalController } from '@ionic/angular';
 import { SetLocationComponent } from './set-location/set-location.component';
+import { ProductService } from './product.service';
+import { Product } from './product';
 
 @Component({
   selector: 'app-mainscr',
@@ -12,8 +14,10 @@ export class MainscrPage implements OnInit {
   expandedfeat: boolean;
   message = 'Turn on GPS to get Location';
   private qtyNumber = 0;
+  productList: Product[] = []
+  productItem: Product
 
-  constructor(private modalCtrl: ModalController) { }
+  constructor(private modalCtrl: ModalController, private productService: ProductService) { }
 
   option = {
     slidesPerView: 3,
@@ -53,6 +57,7 @@ export class MainscrPage implements OnInit {
   }
 
   ngOnInit() {
+    this.productList = this.productService.getProducts()
   }
 
   save() {
