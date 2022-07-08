@@ -15,7 +15,7 @@ export class MainscrPage implements OnInit {
   message = 'Turn on GPS to get Location';
   private qtyNumber = 0;
   productList: Product[] = []
-  productItem: Product
+  
 
   constructor(private modalCtrl: ModalController, private productService: ProductService) { }
 
@@ -58,6 +58,7 @@ export class MainscrPage implements OnInit {
 
   ngOnInit() {
     this.productList = this.productService.getProducts()
+    console.log(this.productService.getProducts())
   }
 
   expandFeat() {

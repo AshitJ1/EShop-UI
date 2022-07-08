@@ -1,6 +1,6 @@
 <ion-card class="cardo">
   <div style="display: flex; align-items: center;justify-content: center;">
-    <img src= />
+    <img [src]= "productItem.imageUrl"/>
   </div>
   <ion-item lines="none">
   <a href="javascript:void(0)" (click)="save()" slot="end">
@@ -8,9 +8,9 @@
   </a>
 </ion-item>
   <br>
-  <ion-card-title></ion-card-title>
+  <ion-card-title>{{productItem.title}}</ion-card-title>
   <p>
-    
+    {{productItem.price | currency: 'INR'}}
   </p>
   <ion-button size="full" color="success">
     <ion-label>View</ion-label>

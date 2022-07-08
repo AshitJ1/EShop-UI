@@ -5,10 +5,10 @@ export class Product {
     imageUrl: string;
     
     constructor(id, title ='', price=0, imageUrl='assets/Images/soon.jpg'){
-        this.id = id;
-        this.title = title;
-        this.price = price;
-        this.imageUrl = imageUrl;
+        this.id = id
+        this.title = title
+        this.price = price
+        this.imageUrl = imageUrl
     }
 
 }
