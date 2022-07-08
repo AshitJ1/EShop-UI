@@ -10,7 +10,7 @@ import { Product } from './product';
   styleUrls: ['./mainscr.page.scss'],
 })
 export class MainscrPage implements OnInit {
-  saved: boolean;
+  
   expandedfeat: boolean;
   message = 'Turn on GPS to get Location';
   private qtyNumber = 0;
@@ -60,9 +60,6 @@ export class MainscrPage implements OnInit {
     this.productList = this.productService.getProducts()
   }
 
-  save() {
-    this.saved = !this.saved;
-  }
   expandFeat() {
     this.expandedfeat = !this.expandedfeat;
   }

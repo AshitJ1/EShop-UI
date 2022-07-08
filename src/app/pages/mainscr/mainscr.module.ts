@@ -8,6 +8,7 @@ import { MainscrPageRoutingModule } from './mainscr-routing.module';
 
 import { MainscrPage } from './mainscr.page';
 import { SetLocationComponent } from './set-location/set-location.component';
+import { ProductsListComponent } from './products-list/products-list.component';
 
 @NgModule({
   imports: [
@@ -16,7 +17,7 @@ import { SetLocationComponent } from './set-location/set-location.component';
     IonicModule,
     MainscrPageRoutingModule
   ],
-  declarations: [MainscrPage, SetLocationComponent],
+  declarations: [MainscrPage, SetLocationComponent, ProductsListComponent],
   entryComponents: [SetLocationComponent]
 })
 export class MainscrPageModule {}
