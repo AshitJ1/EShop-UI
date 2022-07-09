@@ -7,11 +7,13 @@
     <ion-icon [name]="saved ? 'heart-sharp': 'heart-outline'" class="wish" color="danger"></ion-icon>
   </a>
 </ion-item>
-  <br>
+ 
   <ion-card-title>{{productItem.title}}</ion-card-title>
-  <p>
+
+  <ion-card-subtitle>
     {{productItem.price | currency: 'INR'}}
-  </p>
+  </ion-card-subtitle>
+
   <ion-button size="full" color="success">
     <ion-label>View</ion-label>
     <ion-icon name="eye-outline"></ion-icon>
