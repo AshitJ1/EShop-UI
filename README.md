@@ -70,6 +70,7 @@ To get more help on the Angular CLI use ng help or go check out the Angular CLI 
 
 # 6. Register
    ![reg1](https://user-images.githubusercontent.com/103927083/178107941-100dec0b-507d-4c11-b083-dcf348298bba.PNG)
+   ![reg2](https://user-images.githubusercontent.com/103927083/178108728-b008d70a-d853-4242-b690-8cd2e16537bd.PNG)
 
 # 7. Seller Home
    ![home](https://user-images.githubusercontent.com/103927083/178107988-81163390-9652-4ba7-903a-241ee2db828b.PNG)
