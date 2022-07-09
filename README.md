@@ -48,3 +48,13 @@ Run npm run e2e to execute the end-to-end tests via Protractor.
 
 # Further help
 To get more help on the Angular CLI use ng help or go check out the Angular CLI Overview and Command Reference page.
+
+# ScreenShots
+
+1. EShop - Index
+2. Loader
+3. Login
+4. Register
+5. Seller Home
+6. Create Adv. 
+7. Product Detail
