@@ -1,4 +1,4 @@
-# EShop-UI
+# E-Shop-UI
 E-Commerce Platform
 
 This project was generated with Ionic CLI version 6.19.1.
