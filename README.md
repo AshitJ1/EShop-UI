@@ -47,7 +47,10 @@ Run npm run test to execute the unit tests via Karma.
 Run npm run e2e to execute the end-to-end tests via Protractor.
 
 # Further help
-To get more help on the Angular CLI use ng help or go check out the Angular CLI Overview and Command Reference page.
+To get more help on the Ionic CLI & Angular CLI use ng help or go check out the Ionic Framework docs, Angular CLI Overview and Command Reference page.
+
+# Running Application
+To run the Project first Clone the repository in local folder from the Repository URL & Afterwards run npm install in the respective directory to rebuild all the necessary dependencies eg. (node_modules etc), Finally run ionic serve to serve open.
 
 # Screens 📷
 
