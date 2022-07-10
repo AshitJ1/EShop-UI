@@ -51,7 +51,7 @@ To get more help on the Angular CLI use ng help or go check out the Angular CLI 
 
 # Screens 📷
 
-# 1. EShop - Index
+# 1. E-Shop - Index
    ![mainscr1](https://user-images.githubusercontent.com/103927083/178107832-19d2685a-fe7c-4897-bfef-c423aa46fa34.PNG)
    ![mainscr2](https://user-images.githubusercontent.com/103927083/178107853-28b7da54-a23a-41e9-9034-fd51100148bf.PNG)
    ![mainscr3](https://user-images.githubusercontent.com/103927083/178107855-637924e9-dcec-426c-b79d-a4228470b4b7.PNG)
