@@ -3,7 +3,7 @@ E-Commerce Platform
 
 This project was generated with Ionic CLI version 6.19.1.
 
-# Software & Hardware Versions
+# Version History
 Ionic:
 
    Ionic CLI                     : 6.19.1
@@ -32,7 +32,7 @@ System:
    OS     : Windows 10
 
 # Development server
-Run npm start for a dev server. Navigate to http://localhost:8100/. The app will automatically reload if you change any of the source files.
+Run ionic serve for a dev server. Navigate to http://localhost:8100/. The app will automatically reload if you change any of the source files.
 
 # Code scaffolding
 Run ionic generate component component-name to generate a new component. You can also use ionic generate directive|pipe|service|class|guard|interface|enum|page.
