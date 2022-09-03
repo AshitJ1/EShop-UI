@@ -1,8 +1,6 @@
 # E-Shop-UI
 E-Commerce Platform
 
-(Clone Branch Development for Updated Code)
-
 This project was generated with Ionic CLI version 6.19.1.
 
 # Version History
@@ -53,6 +51,9 @@ To get more help on the Ionic CLI & Angular CLI use ng help or go check out the 
 
 # Running Application
 To run the Project first Clone the repository in local folder using the Repository URL & Afterwards run npm install in the respective directory to rebuild all the necessary dependencies eg. (node_modules etc), Finally run ionic serve to serve open.
+
+#Tip 
+Clone Branch Development for Updated Code
 
 # Screens 📷
 
