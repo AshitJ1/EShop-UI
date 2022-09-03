@@ -10,35 +10,35 @@ const routes: Routes = [
  
   {
     path: 'loader',
-    loadChildren: () => import('./pages/loader/loader.module').then( m => m.LoaderPageModule)
+    loadChildren: () => import('./pages/Splash/loader/loader.module').then( m => m.LoaderPageModule)
   },
   {
     path: 'login',
-    loadChildren: () => import('./pages/login/login.module').then( m => m.LoginPageModule)
+    loadChildren: () => import('./pages/Authentication/login/login.module').then( m => m.LoginPageModule)
   },
   {
     path: 'register',
-    loadChildren: () => import('./pages/register/register.module').then( m => m.RegisterPageModule)
+    loadChildren: () => import('./pages/Authentication/register/register.module').then( m => m.RegisterPageModule)
   },
   {
     path: 'forgot',
-    loadChildren: () => import('./pages/forgot-password/forgot-password.module').then( m => m.ForgotPasswordPageModule)
+    loadChildren: () => import('./pages/Authentication/forgot-password/forgot-password.module').then( m => m.ForgotPasswordPageModule)
   },
   {
     path: 'home',
-    loadChildren: () => import('./pages/home/home.module').then( m => m.HomePageModule)
+    loadChildren: () => import('./pages/Authenticated/home/home.module').then( m => m.HomePageModule)
   },
   {
     path: 'postad',
-    loadChildren: () => import('./pages/postad/postad.module').then( m => m.PostadPageModule)
+    loadChildren: () => import('./pages/Authenticated/postad/postad.module').then( m => m.PostadPageModule)
   },
   {
-    path: 'mainscr',
-    loadChildren: () => import('./pages/mainscr/mainscr.module').then( m => m.MainscrPageModule)
+    path: 'main',
+    loadChildren: () => import('./pages/Front/mainscr/mainscr.module').then( m => m.MainscrPageModule)
   },
   {
-    path: 'itmdetail',
-    loadChildren: () => import('./pages/itmdetail/itmdetail.module').then( m => m.ItmdetailPageModule)
+    path: 'itm',
+    loadChildren: () => import('./pages/Front/itmdetail/itmdetail.module').then( m => m.ItmdetailPageModule)
   },
  
 
