@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import {AbstractControl, FormControl, FormGroup, Validators} from '@angular/forms';
+import { AbstractControl, FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-login',
@@ -13,24 +13,25 @@ export class LoginPage implements OnInit {
 
   constructor(private router: Router) {
     this.loginForm = new FormGroup({
-      email: new FormControl('',[Validators.required, Validators.email]),
-      password: new FormControl('',[Validators.required])
+      email: new FormControl('', [Validators.required, Validators.email]),
+      password: new FormControl('', [Validators.required])
     });
-   }
+  }
 
-  get email(): AbstractControl{
+  get email(): AbstractControl {
     return this.loginForm.get('email') as AbstractControl;
   }
 
-  get password(): AbstractControl{
+  get password(): AbstractControl {
     return this.loginForm.get('password') as AbstractControl;
   }
 
   ngOnInit() {
   }
 
-  login(){
-    console.log(this.loginForm.value);
+  login() {
+    let loginValues = this.loginForm.value;
+    console.log(loginValues);
     this.router.navigate(['/profile']);
   }
 

@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
+import { AuthGuard } from '../app/pages/guards/auth.guard';
+
 const routes: Routes = [
   {
     path: '',
@@ -26,11 +28,11 @@ const routes: Routes = [
   },
   {
     path: 'profile',
-    loadChildren: () => import('./pages/Authenticated/home/home.module').then(m => m.HomePageModule)
+    loadChildren: () => import('./pages/Authenticated/home/home.module').then(m => m.HomePageModule), canActivate: [AuthGuard]
   },
   {
     path: 'post',
-    loadChildren: () => import('./pages/Authenticated/postad/postad.module').then(m => m.PostadPageModule)
+    loadChildren: () => import('./pages/Authenticated/postad/postad.module').then(m => m.PostadPageModule), canActivate: [AuthGuard]
   },
   {
     path: 'main',
@@ -39,6 +41,16 @@ const routes: Routes = [
   {
     path: 'itm',
     loadChildren: () => import('./pages/Front/itmdetail/itmdetail.module').then(m => m.ItmdetailPageModule)
+  },
+  {
+    path: 'err',
+    loadChildren: () => import('./pages/Front/err/err.module').then(m => m.ErrPageModule)
+  },
+
+  {
+    path: '**',
+    redirectTo: 'err',
+    pathMatch: 'full'
   },
 
 

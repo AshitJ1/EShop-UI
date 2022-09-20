@@ -128,7 +128,7 @@
   <ion-grid>
     <ion-row>
 
-      <ion-col size-xs="6" size-md="6" size-lg="4" *ngFor ="let producti of productList">
+      <ion-col size-xs="6" size-md="6" size-lg="4" *ngFor="let producti of productList">
         <app-products-list [productItem]="producti"></app-products-list>
       </ion-col>
 
@@ -332,26 +332,30 @@
               <ion-icon name="add-circle" (click)="increment()" style="color:green"></ion-icon>
             </ion-item>
           </ion-item>
-          
+
           <table>
             <tr>
               <td>MRP:</td>
               <td>₹ 62,300</td>
-            
+
             </tr>
             <tr>
               <td style="font-size:small">( - ) Total Savings %:</td>
               <td style="font-size:small">₹ 1,980 (3.17%)</td>
-              
+
             </tr>
             <tr>
-              <td><h3>Bag Total:</h3></td>
-              <td><h2>₹ 60,320</h2></td>
-              
+              <td>
+                <h3>Bag Total:</h3>
+              </td>
+              <td>
+                <h2>₹ 60,320</h2>
+              </td>
+
             </tr>
-            
+
           </table>
-          
+
 
         </ion-list>
       </ion-content>
