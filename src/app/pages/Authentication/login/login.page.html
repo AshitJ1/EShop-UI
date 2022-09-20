@@ -31,11 +31,11 @@
       <ion-item lines="none" class="secitem">
         <ion-label>Remember</ion-label>
         <ion-checkbox color="primary" checked slot="start"></ion-checkbox>
-        <ion-button color="dark" fill="clear" slot="end" size="small">Forget ?</ion-button>
+        <ion-button color="dark" fill="clear" slot="end" size="small" [routerLink]="['/forgot']">Forget ?</ion-button>
       </ion-item>
 
       <ion-button color="primary" size="full" [disabled]="!loginForm.valid" (click)="login()"> Login</ion-button>
-      <ion-button color="primary" fill="clear" size="full"> Register</ion-button>
+      <ion-button color="primary" fill="clear" size="full" [routerLink]="['/register']"> Register</ion-button>
       </form>
     </ion-card-content>
   </ion-card>
