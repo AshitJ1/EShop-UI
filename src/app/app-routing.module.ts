@@ -36,15 +36,19 @@ const routes: Routes = [
   },
   {
     path: 'main',
-    loadChildren: () => import('./pages/Front/mainscr/mainscr.module').then(m => m.MainscrPageModule)
+    loadChildren: () => import('./pages/Shared/mainscr/mainscr.module').then(m => m.MainscrPageModule)
   },
   {
     path: 'itm',
-    loadChildren: () => import('./pages/Front/itmdetail/itmdetail.module').then(m => m.ItmdetailPageModule)
+    loadChildren: () => import('./pages/Shared/itmdetail/itmdetail.module').then(m => m.ItmdetailPageModule)
   },
   {
     path: 'err',
-    loadChildren: () => import('./pages/Front/err/err.module').then(m => m.ErrPageModule)
+    loadChildren: () => import('./pages/Shared/err/err.module').then(m => m.ErrPageModule)
+  },
+  {
+    path: 'settings',
+    loadChildren: () => import('./pages/Shared/settings/settings.module').then( m => m.SettingsPageModule)
   },
 
   {
@@ -52,8 +56,7 @@ const routes: Routes = [
     redirectTo: 'err',
     pathMatch: 'full'
   },
-
-
+  
 ];
 
 @NgModule({

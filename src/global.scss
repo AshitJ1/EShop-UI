@@ -30,17 +30,16 @@
     justify-content: center;
     align-items: center;
     height: 100%
-    }
+}
 
-    @media (prefers-color-scheme: "light") {
-ion-content{
+@media (prefers-color-scheme: "Light") {
+    ion-content {
         --background: rgb(231, 225, 225);
     }
 }
 
-@media (prefers-color-scheme: "dark") {
-    ion-content{
-            --background: rgb(40, 40, 40);
-        }
+@media (prefers-color-scheme: "Dark") {
+    ion-content {
+        --background: rgb(40, 40, 40);
     }
-
+}
