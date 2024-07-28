@@ -1,47 +1,97 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
+import { AuthGuard } from '../app/pages/guards/auth.guard';
+
 const routes: Routes = [
   {
     path: '',
     redirectTo: 'loader',
-    pathMatch: 'full'
+    pathMatch: 'full',
   },
- 
+
   {
     path: 'loader',
-    loadChildren: () => import('./pages/loader/loader.module').then( m => m.LoaderPageModule)
+    loadChildren: () =>
+      import('./pages/Splash/loader/loader.module').then(
+        (m) => m.LoaderPageModule
+      ),
   },
   {
     path: 'login',
-    loadChildren: () => import('./pages/login/login.module').then( m => m.LoginPageModule)
+    loadChildren: () =>
+      import('./pages/Authentication/login/login.module').then(
+        (m) => m.LoginPageModule
+      ),
   },
   {
     path: 'register',
-    loadChildren: () => import('./pages/register/register.module').then( m => m.RegisterPageModule)
+    loadChildren: () =>
+      import('./pages/Authentication/register/register.module').then(
+        (m) => m.RegisterPageModule
+      ),
   },
   {
-    path: 'home',
-    loadChildren: () => import('./pages/home/home.module').then( m => m.HomePageModule)
+    path: 'forgot',
+    loadChildren: () =>
+      import(
+        './pages/Authentication/forgot-password/forgot-password.module'
+      ).then((m) => m.ForgotPasswordPageModule),
   },
   {
-    path: 'postad',
-    loadChildren: () => import('./pages/postad/postad.module').then( m => m.PostadPageModule)
+    path: 'profile',
+    loadChildren: () =>
+      import('./pages/Authenticated/home/home.module').then(
+        (m) => m.HomePageModule
+      ),
+    canActivate: [AuthGuard],
   },
   {
-    path: 'mainscr',
-    loadChildren: () => import('./pages/mainscr/mainscr.module').then( m => m.MainscrPageModule)
+    path: 'post',
+    loadChildren: () =>
+      import('./pages/Authenticated/postad/postad.module').then(
+        (m) => m.PostadPageModule
+      ),
+    canActivate: [AuthGuard],
   },
   {
-    path: 'itmdetail',
-    loadChildren: () => import('./pages/itmdetail/itmdetail.module').then( m => m.ItmdetailPageModule)
-  }
+    path: 'main',
+    loadChildren: () =>
+      import('./pages/Shared/mainscr/mainscr.module').then(
+        (m) => m.MainscrPageModule
+      ),
+  },
+  {
+    path: 'itm',
+    loadChildren: () =>
+      import('./pages/Shared/itmdetail/itmdetail.module').then(
+        (m) => m.ItmdetailPageModule
+      ),
+  },
+  {
+    path: 'err',
+    loadChildren: () =>
+      import('./pages/Shared/err/err.module').then((m) => m.ErrPageModule),
+  },
+  {
+    path: 'settings',
+    loadChildren: () =>
+      import('./pages/Shared/settings/settings.module').then(
+        (m) => m.SettingsPageModule
+      ),
+  },
+
+  {
+    path: '**',
+    redirectTo: 'err',
+    pathMatch: 'full',
+  },
 ];
 
 @NgModule({
   imports: [
-    RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules })
+    RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules }),
   ],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
 export class AppRoutingModule {}

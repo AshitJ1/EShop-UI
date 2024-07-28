@@ -1,0 +1,76 @@
+{
+  "$schema": "https://aka.ms/codetour-schema",
+  "title": "EShop Flow",
+  "steps": [
+    {
+      "file": "src/app/app-routing.module.ts",
+      "description": "includes routing for all pages",
+      "line": 1
+    },
+    {
+      "file": "src/app/pages/Splash/loader/loader.page.html",
+      "description": "loader currently used in splash loader effect in login",
+      "line": 1
+    },
+    {
+      "file": "src/app/pages/Authentication/login/login.page.html",
+      "description": "starts with login Page validates once user enters the email & password.",
+      "line": 1
+    },
+    {
+      "file": "src/app/pages/Authentication/register/register.page.html",
+      "description": "If user wants to register can select profiles from seller/buyer.",
+      "line": 1
+    },
+    {
+      "file": "src/app/pages/Authenticated/home/home.page.html",
+      "description": "user profile dashboard page if user wants to see the updates in profile will only be accessable once validated,\n(Authenticated Page)",
+      "line": 1
+    },
+    {
+      "file": "src/app/pages/Authenticated/postad/postad.page.html",
+      "description": "if user register with seller will able to create add\n(Authenticated Page)",
+      "line": 1
+    },
+    {
+      "file": "src/app/pages/guards/auth.guard.ts",
+      "description": "Handles logic for making authenticated files accessible",
+      "line": 1
+    },
+    {
+      "file": "src/app/pages/Shared/mainscr/mainscr.page.html",
+      "description": "main screen / PLP of Application where user will able to search new/old products, This is main module of plp page which includes components as => product-list & set-location",
+      "line": 1
+    },
+    {
+      "file": "src/app/pages/Shared/mainscr/products-list/products-list.component.html",
+      "description": "card from main screen component=> rendered through loop & sent details through props,\nimported in mainscr.module.ts & used in mainscr.page.ts",
+      "line": 1
+    },
+    {
+      "file": "src/app/pages/Shared/mainscr/set-location/set-location.component.html",
+      "description": "location pop-up component from main screen module, imported in mainscr.module.ts & used in mainscr.page.ts",
+      "line": 1
+    },
+    {
+      "file": "src/app/pages/Shared/itmdetail/itmdetail.page.html",
+      "description": "when product is clicked it will be navigated to its particular detail page which is in progress ",
+      "line": 1
+    },
+    {
+      "file": "src/app/pages/Shared/err/err.page.html",
+      "description": "when wild card route is redirected not found page will be shown",
+      "line": 1
+    },
+    {
+      "file": "src/app/pages/Shared/footer/footer.page.html",
+      "description": "footer will be applied is settings will be part of settings (currently not in use)",
+      "line": 1
+    },
+    {
+      "file": "src/app/pages/Shared/settings/settings.page.html",
+      "description": "can be accessed from side bar, will reflect application settings with help info, (to be made)",
+      "line": 1
+    }
+  ]
+}
