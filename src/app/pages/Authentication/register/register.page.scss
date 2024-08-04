@@ -1,10 +1,13 @@
-ion-content{
-    --background: var(--ion-color-success);
+ion-content {
+  --background: var(--ion-color-success);
 }
-ion-input{
-    --width: 10px;
-    margin: 10px;
+ion-input {
+  --width: 10px;
+  margin: 10px;
 }
-ion-button{
-    margin: 10px;
+ion-button {
+  margin: 10px;
+}
+.error-text {
+  display: block;
 }
