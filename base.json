@@ -1,0 +1,55 @@
+{
+  "user": [
+    {
+      "id": "e0a7",
+      "data": {
+        "userType": "CLIENT",
+        "name": "hit",
+        "email": "fhit@mail.com",
+        "password": "hit@12345",
+        "confirmPassword": "hit@12345",
+        "phone": 9868825566,
+        "location": "vkp",
+        "country": "1",
+        "state": "2",
+        "city": "New-Delhi",
+        "landmark": "f83 ug",
+        "zipCode": 110018
+      }
+    },
+    {
+      "id": "274c",
+      "data": {
+        "city": "London",
+        "confirmPassword": "AshyShop@9",
+        "country": "3",
+        "email": "Ash@mail.com",
+        "landmark": "London Bridge",
+        "location": "Lewis Street",
+        "name": "Ashy",
+        "password": "AshyShop@9",
+        "phone": "9868825500",
+        "state": "4",
+        "userType": "PARTNER",
+        "zipCode": "110018"
+      }
+    },
+    {
+      "id": "64c8",
+      "data": {
+        "userType": "CLIENT",
+        "name": "a",
+        "email": "swami@mail.com",
+        "password": "anush@123",
+        "confirmPassword": "anush@123",
+        "phone": 8345667679,
+        "location": "kdwngr",
+        "country": "1",
+        "state": "2",
+        "city": "New-Delhi",
+        "landmark": "bbnl building",
+        "zipCode": 110091
+      }
+    }
+  ]
+}

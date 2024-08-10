@@ -7,6 +7,9 @@ import {
 } from '@angular/forms';
 import { AlertController } from '@ionic/angular';
 import { ListService } from './list.service';
+import { UserService } from 'src/app/services/user.service';
+import { Router } from '@angular/router';
+import { SignUp } from 'src/app/type';
 
 @Component({
   selector: 'app-register',
@@ -16,7 +19,12 @@ import { ListService } from './list.service';
 export class RegisterPage implements OnInit {
   registerForm: FormGroup;
 
-  constructor(private list: ListService, private alertCtrl: AlertController) {
+  constructor(
+    private list: ListService,
+    private alertCtrl: AlertController,
+    private userSv: UserService,
+    private router: Router
+  ) {
     this.registerForm = new FormGroup(
       {
         userType: new FormControl('CLIENT', [Validators.required]),
@@ -59,8 +67,8 @@ export class RegisterPage implements OnInit {
   }
 
   async showTerms() {
-    const registerValues = this.registerForm.value;
-    console.log(registerValues, 'form before alert');
+    const registerValues: SignUp = this.registerForm.value;
+
     const agreeTerms = await this.alertCtrl.create({
       header: 'Do you want to Continue ?',
       message:
@@ -73,7 +81,11 @@ export class RegisterPage implements OnInit {
         {
           text: 'Agree',
           handler: () => {
-            console.log(registerValues, 'form after agree');
+            this.userSv.userSignUp(registerValues).subscribe((result) => {
+              if (result) {
+                this.router.navigate(['/profile']);
+              }
+            });
           },
         },
       ],
